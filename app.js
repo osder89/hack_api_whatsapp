@@ -7,8 +7,20 @@ const app = express();
 const port = process.env.PORT ;
 
 app.get('/', (req, res) => {
-  res.send('Servidor en funcionamiento en el puerto ' + port);
+  const dataToSave = req.body.body;
+  const filePath = 'data.json';
+const jsonData = JSON.stringify(dataToSave, null, 2); 
+fs.writeFile(filePath, jsonData, (err) => {
+  if (err) {
+    console.error('Error al guardar el archivo:', err);
+  } else {
+    console.log('JSON guardado con éxito en ' + filePath);
+  }
 });
+  console.log('Respuesta'  + req.body.body)
+});
+
+
 
 app.listen(port, () => {
   console.log('La aplicación está escuchando en el puerto ' + port);
