@@ -17,7 +17,7 @@ fs.writeFile(filePath, jsonData, (err) => {
     console.log('JSON guardado con éxito en ' + filePath);
   }
 });
-  console.log('Respuesta'  );
+  console.log('Respuesta' + dataToSave );
 });
 
 app.get('/descargar', (req, res) => {
