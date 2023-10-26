@@ -7,9 +7,9 @@ const app = express();
 const port = process.env.PORT ;
 
 app.get('/', (req, res) => {
-  const dataToSave = req.body.body;
+  const dataToSave = "hola mundo";
   const filePath = 'data.json';
-const jsonData = JSON.stringify(dataToSave, null, 2); 
+  const jsonData = JSON.stringify(dataToSave, null, 2); 
 fs.writeFile(filePath, jsonData, (err) => {
   if (err) {
     console.error('Error al guardar el archivo:', err);
