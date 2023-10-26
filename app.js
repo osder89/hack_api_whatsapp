@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;//process.env.PORT ;
 
 app.get('/', (req, res) => {
-  const dataToSave =  req.headers.host;;
+  const dataToSave =  req.headers.host;
   const filePath = 'data.json';
   const jsonData = JSON.stringify(dataToSave, null, 2); 
 fs.writeFile(filePath, jsonData, (err) => {
