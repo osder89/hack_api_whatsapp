@@ -1,16 +1,15 @@
-// app.js
+require('dotenv').config(); // Carga las variables de entorno desde el archivo .env
+
 const express = require('express');
-const configurarWhatsapp = require('./what_wehooks.js');
-
 const app = express();
-const port = 3000; // El puerto en el que deseas ejecutar tu aplicación Express
 
-app.use('/whatsapp', configurarWhatsapp);
-app.use('/', (req, res) => {
-    const data = { message: 'Hello, world!' };
-    res.json(data);
-  });
+// Obtén el puerto de las variables de entorno o utiliza el puerto 3000 como valor predeterminado
+const port = process.env.PORT ;
+
+app.get('/', (req, res) => {
+  res.send('Servidor en funcionamiento en el puerto ' + port);
+});
 
 app.listen(port, () => {
-  console.log(`La aplicación Express está escuchando en el puerto ${port}`);
+  console.log('La aplicación está escuchando en el puerto ' + port);
 });

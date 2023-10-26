@@ -8,7 +8,7 @@ const app = express();
 app.post('/configurar-whatsapp-webhook', (req, res) => {
   const webhookURL = 'https://whatsapp.toolhero.tech/api/set_webhook';
   const params = {
-    webhook_url: 'https://3194-190-186-42-122.ngrok-free.app/whatsapp/configurar-whatsapp-webhook',
+    webhook_url: 'https://fca1-190-186-42-122.ngrok-free.app/whatsapp/configurar-whatsapp-webhook',
     enable: true,
     instance_id: '653A6DD8EDBB0',
     access_token: '65397a44adc05',
