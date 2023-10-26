@@ -7,7 +7,7 @@ const whatsappWebhookUrl = 'https://whatsapp.toolhero.tech/api/set_webhook';
 const webhookParams = {
   webhook_url: 'https://hackapiwhatsapp-dev-tfma.2.us-1.fl0.io/webhook', // Reemplaza con la URL de tu proyecto
   enable: true,
-  instance_id: '609ACF283XXXX', // Reemplaza con tu instancia de WhatsApp
+  instance_id: '653A6DD8EDBB0', // Reemplaza con tu instancia de WhatsApp
   access_token: '65397a44adc05', // Reemplaza con tu token de acceso
 };
 
