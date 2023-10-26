@@ -1,26 +1,16 @@
-
-
-require('dotenv').config();
-
 const express = require('express');
-const bodyParser = require('body-parser');
+const axios = require('axios');
 const app = express();
-// El puerto en el que se ejecutará el servidor
-const port = process.env.PORT ;
-// Configura body-parser para analizar solicitudes JSON
-app.use(bodyParser.json());
+const port = process.env.PORT  // Usa el puerto proporcionado por tu plataforma de despliegue o el puerto 3000 por defecto
 
-// Define un punto final (endpoint) para recibir eventos de WhatsApp
+app.use(express.json());
+
 app.post('/webhook', (req, res) => {
   const eventData = req.body;
-  // Procesa los eventos de WhatsApp aquí
   console.log('Evento de WhatsApp recibido:', eventData);
-
-  // Envía una respuesta exitosa
   res.status(200).json({ message: 'Evento recibido con éxito' });
 });
 
-// Inicia el servidor
 app.listen(port, () => {
   console.log(`Servidor escuchando en el puerto ${port}`);
 });
