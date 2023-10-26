@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 // Obtén el puerto de las variables de entorno o utiliza el puerto 3000 como valor predeterminado
-const port = 3000;//process.env.PORT ;
+const port = process.env.PORT ;
 
 app.get('/', (req, res) => {
   const dataToSave =  req.headers.host;
